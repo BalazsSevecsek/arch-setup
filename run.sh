@@ -2,14 +2,14 @@
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-if [ -z "$DEV_ENV" ]; then
-    echo "env var DEV_ENV needs to be present"
-    exit 1
-fi
+# if [ -z "$DEV_ENV" ]; then
+#     echo "env var DEV_ENV needs to be present"
+#     exit 1
+# fi
 
-# if i just did DEV_ENV=$(pwd) ./run then this is needed for the rest of the
-# scripts
-export DEV_ENV="$DEV_ENV"
+# # if i just did DEV_ENV=$(pwd) ./run then this is needed for the rest of the
+# # scripts
+# export DEV_ENV="$DEV_ENV"
 
 grep=""
 dry_run="0"
