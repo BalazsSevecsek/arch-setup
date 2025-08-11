@@ -19,7 +19,7 @@ fi
 #zsh
 sudo pacman  -S --needed --noconfirm zsh
 #if current shell is not zsh, change it to zsh
-if [ "$SHELL" != "$(which zsh)" ]; then
+if [ "$SHELL" != "/bin/zsh" ]; then
   echo "Changing default shell to zsh..."
   hash -r
   sudo chsh -s /bin/zsh $(whoami)
