@@ -36,6 +36,11 @@ log "RUN: env: $env -- grep: $grep"
 
 runs_dir=`find $script_dir/scripts -mindepth 1 -maxdepth 1 -executable`
 
+log "All files in runs_dir:"
+for file in $runs_dir; do
+    log "$file"
+done
+
 #upgrade system before anything else
 sudo pacman -Syu --noconfirm --needed
 
@@ -48,10 +53,10 @@ fi
 
 
 for s in $runs_dir; do
-    if basename $s | grep -vq "$grep"; then
-        log "grep \"$grep\" filtered out $s"
-        continue
-    fi
+    # if basename $s | grep -vq "$grep"; then
+    #     log "grep \"$grep\" filtered out $s"
+    #     continue
+    # fi
 
     log "running script: $s"
 
