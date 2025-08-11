@@ -1,11 +1,12 @@
 #!/bin/bash
 
-#if the folder of yay does not exist, clone it and install the binary package
+#package manager
+#install yay if it is not already installed
 if ! pacman -Q yay &>/dev/null; then
   sudo pacman -S --needed  --noconfirm git base-devel
   git clone https://aur.archlinux.org/yay-bin.git
   cd yay-bin
-  makepkg -si
+  makepkg -si --noconfirm
   cd ..
   rm -rf yay-bin
 else
