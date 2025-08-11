@@ -15,3 +15,11 @@ fi
 
 
 
+#zsh
+sudo pacman  -S --needed --noconfirm zsh
+#if current shell is not zsh, change it to zsh
+if [ "$SHELL" != "$(which zsh)" ]; then
+  hash -r
+  sudo chsh -s $(which zsh)
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
