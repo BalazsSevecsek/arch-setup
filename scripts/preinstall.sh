@@ -20,7 +20,7 @@ sudo pacman  -S --needed --noconfirm zsh
 #if current shell is not zsh, change it to zsh
 if [ "$SHELL" != "$(which zsh)" ]; then
   hash -r
-  sudo chsh -s $(which zsh)
+  chsh -s $(which zsh)
   yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
