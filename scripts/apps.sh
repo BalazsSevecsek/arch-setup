@@ -1,1 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+echo "app.sh"

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
@@ -36,6 +36,9 @@ log "RUN: env: $env -- grep: $grep"
 
 runs_dir=`find $script_dir/scripts -mindepth 1 -maxdepth 1 -executable`
 
+pacman -Syu --noconfirm --needed
+
+
 log "running script: preinstall"
 # if not dry run and not filtered out by grep
 if [[ $dry_run == "0" ]] &&  echo "preinstall" | grep -vq "$grep"; then
@@ -47,6 +50,7 @@ log "running script: hw"
 if [[ $dry_run == "0" ]] &&  echo "hw" | grep -vq "$grep"; then
     source "$script_dir/hw.sh"
 fi
+
 
 
 for s in $runs_dir; do

@@ -1,1 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+pacman -S --needed --no-confirm hyprland
