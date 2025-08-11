@@ -36,7 +36,7 @@ log "RUN: env: $env -- grep: $grep"
 
 runs_dir=`find $script_dir/scripts -mindepth 1 -maxdepth 1 -executable`
 
-echo "$runs_dir"
+echo "-------------------$runs_dir"
 
 pacman -Syu --noconfirm --needed
 
