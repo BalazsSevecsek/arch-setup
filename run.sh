@@ -46,13 +46,6 @@ if [[ $dry_run == "0" ]] &&  echo "preinstall" | grep -vq "$grep"; then
     source "$runs_dir/preinstall.sh"
 fi
 
-# if not dry run and not filtered out by grep
-if [[ $dry_run == "0" ]] &&  echo "hw" | grep -vq "$grep"; then
-    log "running script: $runs_dir/hw.sh"
-    source "$runs_dir/hw.sh"
-fi
-
-
 
 for s in $runs_dir; do
     if basename $s | grep -vq "$grep"; then
