@@ -7,7 +7,7 @@ if ! rustup --version; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile complete
     cargo install stylua --features luajit
     #uncomment path export if needed
-    sed -i.bak '/^#export PATH=/ s/^#//g' ~/.zshr
+    sed -i.bak '/^# export PATH=/ s/^# //' ~/.zshrc
     # Add Rust to PATH if not already present
     sed -i.bak '/^export PATH=/ {
       /\$HOME\/\.cargo\/bin/! s/:$PATH"/:$HOME\/.cargo\/bin:$PATH"/
