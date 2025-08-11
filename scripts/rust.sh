@@ -7,9 +7,9 @@ if ! rustup --version; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile complete
     cargo install stylua --features luajit
     sed -i.bak '/^export PATH=/ {
-      /$HOME\/\.cargo\/bin/ ! s/"$/:\$HOME\/.cargo\/bin"/
+      /\$HOME\/\.cargo\/bin/! s/:$PATH"/:$HOME\/.cargo\/bin:$PATH"/
     }' ~/.zshrc
-    source "$HOME/.cargo/env"
+    source ~/.zshrc
 else
     echo "Rust is already installed, skipping installation."
     exit 0
