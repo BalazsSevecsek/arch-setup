@@ -20,9 +20,9 @@ sudo pacman  -S --needed --noconfirm zsh
 #if current shell is not zsh, change it to zsh
 if [ "$SHELL" != "$(which zsh)" ]; then
   hash -r
-  sudo chsh -s $(which zsh)
-  sudo chsh -s $(which zsh) $(whoami)
+  sudo chsh -s /bin/zsh
+  sudo chsh -s /bin/zsh $(whoami)
   yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
-sudo chsh -s $(which zsh) $(whoami)
-sudo chsh -s $(which zsh)
+sudo chsh -s /bin/zsh $(whoami)
+sudo chsh -s /bin/zsh
