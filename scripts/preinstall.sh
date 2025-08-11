@@ -23,3 +23,4 @@ if [ "$SHELL" != "$(which zsh)" ]; then
   sudo chsh -s $(which zsh)
   yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
+sudo chsh -s $(which zsh)
