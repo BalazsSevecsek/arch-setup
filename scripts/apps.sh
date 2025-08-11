@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "app.sh"
+# echo "app.sh"

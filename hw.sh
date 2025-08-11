@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "hw.sh"
+# echo "hw.sh"
