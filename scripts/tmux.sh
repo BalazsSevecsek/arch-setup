@@ -1,5 +1,6 @@
 #!/bin/bash
-sudo pacman -S --noconfirm --needed tmux
+
+sudo pacman -S --noconfirm --needed tmux 
 
 if [ ! -f ~/.tmux.conf ]; then
   cp config/tmux.conf ~/.tmux.conf
