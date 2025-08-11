@@ -37,7 +37,7 @@ log "RUN: env: $env -- grep: $grep"
 runs_dir=`find $script_dir/scripts -mindepth 1 -maxdepth 1 -executable`
 
 #upgrade system before anything else
-pacman -Syu --noconfirm --needed
+sudo pacman -Syu --noconfirm --needed
 
 
 # if not dry run and not filtered out by grep

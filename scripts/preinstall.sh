@@ -1,5 +1,8 @@
 #!/bin/bash
 
-#package manager
-pacman -S --needed --noconfirm git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ~
+#package manager yay
+sudo pacman -S --needed --noconfirm git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ~
+
+
+
 

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pacman -S --needed --noconfirm hyprland
+sudo pacman -S --needed --noconfirm hyprland
