@@ -21,5 +21,5 @@ sudo pacman  -S --needed --noconfirm zsh
 if [ "$SHELL" != "$(which zsh)" ]; then
   hash -r
   sudo chsh -s $(which zsh)
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
