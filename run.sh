@@ -42,13 +42,13 @@ pacman -Syu --noconfirm --needed
 log "running script: preinstall"
 # if not dry run and not filtered out by grep
 if [[ $dry_run == "0" ]] &&  echo "preinstall" | grep -vq "$grep"; then
-    source "$script_dir/preinstall.sh"
+    source "$runs_dir/preinstall.sh"
 fi
 
 log "running script: hw"
 # if not dry run and not filtered out by grep
 if [[ $dry_run == "0" ]] &&  echo "hw" | grep -vq "$grep"; then
-    source "$script_dir/hw.sh"
+    source "$runs_dir/hw.sh"
 fi
 
 
