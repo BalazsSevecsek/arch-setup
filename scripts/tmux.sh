@@ -3,7 +3,7 @@
 sudo pacman -S --noconfirm --needed tmux 
 
 if [ ! -f ~/.tmux.conf ]; then
-  cp config/tmux.conf ~/.tmux.conf
+  cp config/.tmux.conf ~/.tmux.conf
 fi
 
 #tmux plugin manager
