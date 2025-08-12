@@ -61,3 +61,5 @@ if [ "$SHELL" != "/bin/zsh" ]; then
   yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
+
+sudo pacman -S --needed --noconfirm flatpak
