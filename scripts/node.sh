@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 #check if zshrc exists and contains line starting with "export NVM_DIR"
 if [[ ! -f "$HOME/.zshrc" ]] || ! grep -q "^export NVM_DIR=" "$HOME/.zshrc"; then
