@@ -9,7 +9,7 @@ if ! rustup --version; then
     #uncomment path export if needed
     sed -i.bak '/^# export PATH=/ s/^# //' ~/.zshrc
     # Add Rust to PATH if not already present
-    sed -i.bak '/^export PATH=/ {
+    sed '/^export PATH=/ {
       /\$HOME\/\.cargo\/bin/! s/:$PATH"/:$HOME\/.cargo\/bin:$PATH"/
     }' ~/.zshrc
     source ~/.zshrc
@@ -17,3 +17,7 @@ else
     echo "Rust is already installed, skipping installation."
     exit 0
 fi
+
+sed '/^export PATH=/ {
+  /\$HOME\/\.cargo\/bin/! s/:$PATH"/:$HOME\/.cargo\/bin:$PATH"/
+}' ~/.zshrc
