@@ -17,6 +17,3 @@ else
     echo "Rust is already installed, skipping installation."
     exit 0
 fi
-sed -i '/^export PATH=/ {
-  /\$HOME\/\.cargo\/bin/! s|:\$PATH|:\\$HOME/.cargo/bin:\\$PATH|
-}' ~/.zshrc
