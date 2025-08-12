@@ -1,3 +1,3 @@
 #!/bin/bash
 
-yay -S ghostty --noconfirm --needed
+yay -S --noconfirm --needed ghostty
