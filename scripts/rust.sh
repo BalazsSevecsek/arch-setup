@@ -18,5 +18,5 @@ else
     exit 0
 fi
 sed -i '/^export PATH=/ {
-  /\$HOME\/\.cargo\/bin/! s|:\$PATH|:\$HOME/.cargo/bin:\$PATH|
+  /\$HOME\/\.cargo\/bin/! s|:\$PATH|:\\$HOME/.cargo/bin:\\$PATH|
 }' ~/.zshrc
