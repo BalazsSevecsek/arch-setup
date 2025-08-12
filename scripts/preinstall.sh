@@ -13,7 +13,14 @@ else
   echo "yay is already installed."
 fi
 
-
+#AMD drivers 
+if lspci | grep -i "vga" | grep -i "amd"; then
+  sudo pacman -S --needed --noconfirm mesa
+  echo "AMD GPU detected, installing AMD drivers."
+else
+  echo "No AMD GPU detected, installing nvidia."
+  sudo pacman -Syu nvidia nvidia-utils  # if Nvidia GPU
+fi  
 
 
 #zsh
