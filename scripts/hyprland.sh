@@ -1,8 +1,4 @@
 #!/bin/bash
 
-sudo pacman -S --needed --noconfirm vim kitty mesa
+sudo pacman -S --needed --noconfirm vim kitty mesa polkit-kde-agent qt5-wayland qt6-wayland xdg-desktop-portal-hyprland xdg-utils
 sudo pacman -S --needed --noconfirm hyprland
-
-sudo pacman -S --needed --noconfirm wayland xorg-xwayland wl-clipboard mesa xdg-desktop-portal xdg-desktop-portal-wlr foot greetd
-sudo pacman -S --needed --noconfirm xdg-desktop-portal-hyprland hyprpaper waybar
-
