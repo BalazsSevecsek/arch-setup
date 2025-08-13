@@ -64,4 +64,4 @@ fi
 
 source ./keepassxc.sh
 sudo pacman -S --needed --noconfirm flatpak
-yay -Sy brave-bin
+yay -Sy -needed --noconfirm brave-bin
