@@ -63,3 +63,5 @@ fi
 
 
 sudo pacman -S --needed --noconfirm flatpak
+sudo pacman -S --needed --noconfirm keepassxc
+yay -Sy brave-bin
