@@ -1,1 +1,1 @@
-sudo pacman -S --needed --noconfirm visual-studio-code-bin
+yay -S --needed --noconfirm visual-studio-code-bin
