@@ -20,7 +20,7 @@ sudo pacman -S --needed --noconfirm walker
 sudo pacman -S --needed --noconfirm mako
 sudo pacman -S --needed --noconfirm fcitx5
 sudo pacman -S --needed --noconfirm swaybg
-sudo pacman -S --needed --noconfirm swayosd-server
+# sudo pacman -S --needed --noconfirm swayosd-server
 
 # yay -S --needed --noconfirm nerd-fonts-caskaydia-mono
 
