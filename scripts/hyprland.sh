@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo pacman -S --needed --noconfirm harfbuzz
+
 sudo pacman -S --needed --noconfirm mesa
 sudo pacman -S --needed --noconfirm polkit-kde-agent
 sudo pacman -S --needed --noconfirm qt5-wayland
