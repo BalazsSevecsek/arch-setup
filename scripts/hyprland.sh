@@ -27,4 +27,4 @@ sudo pacman -S --needed --noconfirm swaybg
 # yay -S --needed --noconfirm nerd-fonts-caskaydia-mono
 
 [ ! -d ~/.config/hypr ] && mkdir -p ~/.config/hypr
-cp  config/hyprland/* ~/.config/hypr/
+cp -r config/hyprland/* ~/.config/hypr/
