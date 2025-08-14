@@ -1,4 +1,4 @@
-sudo pacman -S --noconfirm keepassxc
+sudo pacman -S --noconfirm --needed keepassxc
 sudo pacman -S --needed --noconfirm rclone
 
 # rclone config create gdrive drive \
