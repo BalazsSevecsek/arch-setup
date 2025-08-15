@@ -34,6 +34,6 @@ cp -r config/hyprland/* ~/.config/hypr/
 
 
 #pomodoro for waybar
-git clone git@github.com:Andeskjerf/waybar-module-pomodoro.git
-cd waybar-module-pomodoro
-cargo build --release
+# git clone git@github.com:Andeskjerf/waybar-module-pomodoro.git
+# cd waybar-module-pomodoro
+# cargo build --release

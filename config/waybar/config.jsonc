@@ -2,22 +2,18 @@
   "layer": "top",
   "position": "top",
   "margin-bottom": -10,
-  "spacing" : 0,
-  "modules-left": [
-  "hyprland/workspaces",
-  "custom/uptime",
-  "cpu"
-  ],
+  "spacing": 0,
+  "modules-left": ["hyprland/workspaces", "custom/uptime", "cpu"],
 
   "modules-center": ["clock"],
 
   "modules-right": [
-    "custom/pomodoro",
+    // "custom/pomodoro",
     "bluetooth",
     "network",
-    "pulseaudio", 
+    "pulseaudio",
     "backlight",
-    "battery",
+    "battery"
   ],
 
   "hyprland/workspaces": {
@@ -31,15 +27,15 @@
   "bluetooth": {
     "format": "󰂲",
     "format-on": "{icon}",
-    "format-off": "{icon}", 
-    "format-connected":"{icon}",
-    "format-icons":{
-        "on":"󰂯",
-        "off": "󰂲",
-        "connected": "󰂱",
-        },
+    "format-off": "{icon}",
+    "format-connected": "{icon}",
+    "format-icons": {
+      "on": "󰂯",
+      "off": "󰂲",
+      "connected": "󰂱"
+    },
     "on-click": "blueman-manager",
-    "tooltip-format-connected":"{device_enumerate}"
+    "tooltip-format-connected": "{device_enumerate}"
   },
 
   "custom/music": {
@@ -66,8 +62,7 @@
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
     "on-click": "nm-connection-editor"
-
- },
+  },
 
   "cpu": {
     "interval": 1,
@@ -84,18 +79,18 @@
 
   "custom/uptime": {
     "format": "{}",
-    "format-icon": [""], 
+    "format-icon": [""],
     "tooltip": false,
     "interval": 1600,
     "exec": "$HOME/.config/waybar/scripts/uptime.sh"
   },
-  
+
   "backlight": {
-        "format": "{icon}  {percent}%",
-        "format-icons": ["","󰃜", "󰃛", "󰃞","󰃝","󰃟","󰃠"],
-        "tooltip": false
+    "format": "{icon}  {percent}%",
+    "format-icons": ["", "󰃜", "󰃛", "󰃞", "󰃝", "󰃟", "󰃠"],
+    "tooltip": false
   },
-  
+
   "pulseaudio": {
     "format": "{icon}  {volume}%",
     "format-muted": "",
@@ -106,35 +101,33 @@
   },
 
   "battery": {
-        "interval":2,
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}  {capacity}%",
-        "format-full": "{icon}  {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {time}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+    "interval": 2,
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-full": "{icon}  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
   },
-  
+
   "custom/lock": {
-  "tooltip": false,
-  "on-click": "sh -c '(sleep 0s; hyprlock)' & disown",
-  "format" : ""
-  },
+    "tooltip": false,
+    "on-click": "sh -c '(sleep 0s; hyprlock)' & disown",
+    "format": ""
+  }
 
-  "custom/pomodoro": {
-	"format": "{}",
-	"return-type": "json",
-	"exec": "waybar-module-pomodoro --no-work-icons",
-	"on-click": "waybar-module-pomodoro toggle",
-	"on-click-right": "waybar-module-pomodoro reset",
-  },
-
+  // "custom/pomodoro": {
+  //   "format": "{}",
+  //   "return-type": "json",
+  //   "exec": "waybar-module-pomodoro --no-work-icons",
+  //   "on-click": "waybar-module-pomodoro toggle",
+  //   "on-click-right": "waybar-module-pomodoro reset"
+  // }
 }
-
