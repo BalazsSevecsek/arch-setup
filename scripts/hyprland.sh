@@ -31,3 +31,9 @@ sudo pacman -S --needed --noconfirm swaybg
 
 [ ! -d ~/.config/hypr ] && mkdir -p ~/.config/hypr
 cp -r config/hyprland/* ~/.config/hypr/
+
+
+#pomodoro for waybar
+git clone git@github.com:Andeskjerf/waybar-module-pomodoro.git
+cd waybar-module-pomodoro
+cargo build --release
