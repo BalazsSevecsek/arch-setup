@@ -50,7 +50,7 @@
   "clock": {
     "timezone": "Asia/Kolkata",
     "tooltip": false,
-    "format": "{:%H:%M  -  %A, %d}",
+    "format": "{:%H:%M  - %B %d (%A) }",
     "interval": 1
   },
 
