@@ -29,9 +29,9 @@
     "format-off": "{icon}",
     "format-connected": "{icon}",
     "format-icons": {
-      "on": "",        // Bluetooth On
-      "off": "",       // Bluetooth Off
-      "connected": ""  // Bluetooth Connected
+      "on": "", // Bluetooth On
+      "off": "", // Bluetooth Off
+      "connected": "" // Bluetooth Connected
     },
     "on-click": "blueman-manager",
     "tooltip-format-connected": "{device_enumerate}"
@@ -118,3 +118,4 @@
     "on-click": "sh -c '(sleep 0s; hyprlock)' & disown",
     "format": ""
   }
+}
