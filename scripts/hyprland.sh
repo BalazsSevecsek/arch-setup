@@ -30,6 +30,7 @@ sudo pacman -S --needed --noconfirm htop
 cp -r config/hyprland/* ~/.config/hypr/
 
 #fonts
+[ ! -d ~/nerd-fonts ]
 git clone https://github.com/ryanoasis/nerd-fonts.git
 cd nerd-fonts
 ./install.sh
