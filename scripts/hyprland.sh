@@ -36,7 +36,7 @@ yay -S --needed --noconfirm ttf-ms-win11-segoe
 
 #sound control
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub com.saivert.pwvucontrol
+flatpak install -y flathub com.saivert.pwvucontrol
 
 #bluetooth
 sudo pacman -S --needed --noconfirm bluez bluez-utils blueman
