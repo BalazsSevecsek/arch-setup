@@ -26,8 +26,10 @@ sudo pacman -S --needed --noconfirm htop
 
 # yay -S --needed --noconfirm nerd-fonts-caskaydia-mono
 
-[ ! -d ~/.config/hypr ] && mkdir -p ~/.config/hypr
-cp -r config/hyprland/ ~/.config/hypr/
+[ ! -d ~/.config/hypr ] 
+mkdir -p ~/.config/hypr
+
+cp -r config/hyprland/* ~/.config/hypr/
 
 #fonts
 # [ ! -d ~/nerd-fonts ]
