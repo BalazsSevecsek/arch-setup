@@ -20,8 +20,8 @@ sudo pacman -S --needed --noconfirm hypridle
 sudo pacman -S --needed --noconfirm playerctl
 sudo pacman -S --needed --noconfirm hypershot
 sudo pacman -S --needed --noconfirm walker
-sudo pacman -S --needed --noconfirm blueman-manager
-sudo pacman -S --needed --noconfirm pavucontrol
+sudo pacman -S --needed --noconfirm htop
+
 # sudo pacman -S --needed --noconfirm swayosd-server
 
 # yay -S --needed --noconfirm nerd-fonts-caskaydia-mono
