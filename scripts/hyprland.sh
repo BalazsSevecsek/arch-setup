@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 sudo pacman -S --needed --noconfirm dolphin
 sudo pacman -S --needed --noconfirm ghostty
 sudo pacman -S --needed --noconfirm foot
@@ -28,6 +29,19 @@ sudo pacman -S --needed --noconfirm pavucontrol
 [ ! -d ~/.config/hypr ] && mkdir -p ~/.config/hypr
 cp -r config/hyprland/* ~/.config/hypr/
 
+#fonts
+sudo pacman -S --needed --noconfirm inter-font
+sudo pacman -S --needed --noconfirm nerd-fonts-noto-sans
+yay -S --needed --noconfirm ttf-ms-win11-segoe
+
+#sound control
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub com.saivert.pwvucontrol
+
+#bluetooth
+sudo pacman -S --needed --noconfirm bluez bluez-utils blueman
+sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service
 
 [ ! -d ~/.config/waybar/ ] && mkdir -p ~/.config/waybar/
 cp -r config/waybar/* ~/.config/waybar/

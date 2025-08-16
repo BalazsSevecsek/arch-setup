@@ -68,7 +68,7 @@
     "interval": 1,
     "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-    "on-click": "ghostty -e htop"
+    "on-click": "foot -e htop" //"ghostty -e htop"
   },
 
   "memory": {
@@ -131,3 +131,5 @@
   //   "on-click-right": "waybar-module-pomodoro reset"
   // }
 }
+
+//https://github.com/Andeskjerf/waybar-module-pomodoro
