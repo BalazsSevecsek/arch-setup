@@ -18,8 +18,8 @@ sudo pacman -S --needed --noconfirm hyprsunset
 sudo pacman -S --needed --noconfirm hyprlock
 sudo pacman -S --needed --noconfirm hypridle
 sudo pacman -S --needed --noconfirm playerctl
-sudo pacman -S --needed --noconfirm hypershot
-sudo pacman -S --needed --noconfirm walker
+# sudo pacman -S --needed --noconfirm hypershot
+# sudo pacman -S --needed --noconfirm walker
 sudo pacman -S --needed --noconfirm htop
 
 # sudo pacman -S --needed --noconfirm swayosd-server
@@ -27,7 +27,7 @@ sudo pacman -S --needed --noconfirm htop
 # yay -S --needed --noconfirm nerd-fonts-caskaydia-mono
 
 [ ! -d ~/.config/hypr ] && mkdir -p ~/.config/hypr
-cp -r config/hyprland/* ~/.config/hypr/
+cp -r config/hyprland/ ~/.config/hypr/
 
 #fonts
 # [ ! -d ~/nerd-fonts ]
