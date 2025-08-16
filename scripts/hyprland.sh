@@ -34,7 +34,6 @@ cp -r config/hyprland/* ~/.config/hypr/
 git clone https://github.com/ryanoasis/nerd-fonts.git ~/nerd-fonts
 source ~/nerd-fonts/install.sh
 
-
 sudo pacman -S --needed --noconfirm inter-font
 sudo pacman -S --needed --noconfirm nerd-fonts-noto-sans
 yay -S --needed --noconfirm ttf-ms-win11-segoe
