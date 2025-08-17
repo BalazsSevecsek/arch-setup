@@ -42,7 +42,6 @@ cp -r config/hyprland/* ~/.config/hypr/
 # source ~/nerd-fonts/install.sh
 
 sudo pacman -S --needed --noconfirm inter-font
-sudo pacman -S --needed --noconfirm noto-fonts
 sudo pacman -S --needed --noconfirm nerd-fonts-noto-sans
 yay -S --needed --noconfirm ttf-ms-win11-segoe
 
