@@ -83,8 +83,8 @@ fi
 cp -r config/mako/* ~/.config/mako/
 
 
-#enable services
-systemctl --user enable --now hypridle.service &
-systemctl --user enable --now hyprsunset.services & 
+#enable services 
+systemctl --user enable --now hypridle.service
+systemctl --user enable --now hyprsunset.services
 #Authentication agent for apps asking for password
-systemctl --user enable --now hyprpolkitagent.service &
+systemctl --user enable --now hyprpolkitagent.service
