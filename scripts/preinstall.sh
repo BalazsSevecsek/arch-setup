@@ -26,17 +26,18 @@ fi
 echo "Detected GPU vendor: $GPU_VENDOR"
 
 # Install drivers based on detected vendor
+sudo pacman -S --noconfirm vulkan-icd-loader vulkan-tools
 case $GPU_VENDOR in
   nvidia)
     echo "Installing Nvidia drivers..."
-    pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
+    sudo pacman -S --noconfirm nvidia nvidia-utils nvidia-settings
     # Optionally install dkms for kernel module auto rebuild
-    pacman -S --noconfirm dkms
+    sudo pacman -S --noconfirm dkms
     ;;
   amd)
     echo "Installing AMD drivers..."
     # AMD GPU open source drivers are part of mesa
-    pacman -S --noconfirm xf86-video-amdgpu mesa
+    sudo pacman -S --noconfirm xf86-video-amdgpu mesa vulkan-radeon
     ;;
   *)
     echo "No Nvidia or AMD GPU detected, skipping driver installation."
