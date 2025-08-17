@@ -22,6 +22,9 @@ sudo pacman -S --needed --noconfirm hyprpolkitagent
 sudo pacman -S --needed --noconfirm playerctl
 #notification manager
 sudo pacman -S --needed --noconfirm mako
+#screen sharing
+sudo pacman -S --needed --noconfirm pipewire wireplumber
+
 
 # sudo pacman -S --needed --noconfirm hypershot
 # sudo pacman -S --needed --noconfirm walker
