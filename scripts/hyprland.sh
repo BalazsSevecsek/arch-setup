@@ -81,3 +81,10 @@ fi
 
 [ ! -d ~/.config/mako/ ] && mkdir -p ~/.config/mako/
 cp -r config/mako/* ~/.config/mako/
+
+
+#enable services
+systemctl --user enable --now hypridle.service &
+systemctl --user enable --now hyprsunset.services & 
+#Authentication agent for apps asking for password
+systemctl --user enable --now hyprpolkitagent.service &
