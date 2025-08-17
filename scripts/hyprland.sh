@@ -5,19 +5,24 @@ sudo pacman -S --needed --noconfirm dolphin
 sudo pacman -S --needed --noconfirm ghostty
 sudo pacman -S --needed --noconfirm foot
 sudo pacman -S --needed --noconfirm mesa
-sudo pacman -S --needed --noconfirm polkit-kde-agent
+# sudo pacman -S --needed --noconfirm polkit-kde-agent
 sudo pacman -S --needed --noconfirm qt5-wayland
 sudo pacman -S --needed --noconfirm qt6-wayland
-sudo pacman -S --needed --noconfirm xdg-desktop-portal-hyprland
-sudo pacman -S --needed --noconfirm xdg-utils
-sudo pacman -S --needed --noconfirm gdm
+# sudo pacman -S --needed --noconfirm xdg-utils
+# sudo pacman -S --needed --noconfirm gdm
 sudo pacman -S --needed --noconfirm hyprland  
+sudo pacman -S --needed --noconfirm uwsm libnewt
+sudo pacman -S --needed --noconfirm xdg-desktop-portal-hyprland
 sudo pacman -S --needed --noconfirm waybar
 sudo pacman -S --needed --noconfirm hyprpaper
-sudo pacman -S --needed --noconfirm hyprsunset
 sudo pacman -S --needed --noconfirm hyprlock
 sudo pacman -S --needed --noconfirm hypridle
+sudo pacman -S --needed --noconfirm hyprsunset
+sudo pacman -S --needed --noconfirm hyprpolkitagent
 sudo pacman -S --needed --noconfirm playerctl
+#notification manager
+sudo pacman -S --needed --noconfirm mako
+
 # sudo pacman -S --needed --noconfirm hypershot
 # sudo pacman -S --needed --noconfirm walker
 sudo pacman -S --needed --noconfirm htop
@@ -37,6 +42,8 @@ cp -r config/hyprland/* ~/.config/hypr/
 # source ~/nerd-fonts/install.sh
 
 sudo pacman -S --needed --noconfirm inter-font
+sudo pacman -S --needed --noconfirm sans-fonts
+sudo pacman -S --needed --noconfirm noto-fonts
 sudo pacman -S --needed --noconfirm nerd-fonts-noto-sans
 yay -S --needed --noconfirm ttf-ms-win11-segoe
 
@@ -57,3 +64,18 @@ cp -r config/waybar/* ~/.config/waybar/
 # git clone git@github.com:Andeskjerf/waybar-module-pomodoro.git
 # cd waybar-module-pomodoro
 # cargo build --release
+
+
+#add the following to shell profile
+ZSHRC="$HOME/.zshrc"
+BLOCK='if uwsm check may-start; then
+    exec uwsm start hyprland-uwsm.desktop
+fi'
+
+# Check if block already exists in .zshrc
+if ! grep -q "uwsm start hyprland-uwsm.desktop" "$ZSHRC"; then
+    printf "\n# Start Hyprland with UWSM\n%s\n" "$BLOCK" >> "$ZSHRC"
+    echo "✅ Added Hyprland start block to $ZSHRC"
+else
+    echo "ℹ️ Hyprland start block already present in $ZSHRC"
+fi
