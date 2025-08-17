@@ -77,3 +77,7 @@ if ! grep -q "uwsm start hyprland-uwsm.desktop" "$ZSHRC"; then
 else
     echo "ℹ️ Hyprland start block already present in $ZSHRC"
 fi
+
+
+[ ! -d ~/.config/mako/ ] && mkdir -p ~/.config/mako/
+cp -r config/mako/* ~/.config/mako/
