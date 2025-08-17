@@ -75,7 +75,7 @@ if ! grep -q "uwsm start hyprland-uwsm.desktop" "$ZSHRC"; then
     printf "\n# Start Hyprland with UWSM\n%s\n" "$BLOCK" >> "$ZSHRC"
     echo "✅ Added Hyprland start block to $ZSHRC"
 else
-    echo "ℹ️ Hyprland start block already present in $ZSHRC"
+    echo "info: Hyprland start block already present in $ZSHRC"
 fi
 
 
