@@ -24,7 +24,7 @@ sudo pacman -S --needed --noconfirm playerctl
 sudo pacman -S --needed --noconfirm mako
 #screen sharing
 sudo pacman -S --needed --noconfirm pipewire wireplumber
-sudo pacman -S --needed --noconfirm walker
+yay -S --needed --noconfirm walker
 
 
 
