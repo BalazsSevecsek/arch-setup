@@ -25,7 +25,7 @@ sudo pacman -S --needed --noconfirm mako
 #screen sharing
 sudo pacman -S --needed --noconfirm pipewire wireplumber
 sudo pacman -S --needed --noconfirm  gtk4 gtk4-layer-shell protobuf protobuf-c 
-yay -S --needed --noconfirm elephant walker
+yay -S --needed --noconfirm elephant walker-bin
 
 
 
