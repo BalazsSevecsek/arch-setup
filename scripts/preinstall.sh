@@ -1,5 +1,11 @@
 #!/bin/bash
 
+ssh-keygen -t ed25519 -C "emailaddress" -N "" -f ~/.ssh/id_ed25519
+echo "Add this to github keys"
+cat ~/.ssh/id_ed25519.pub
+
+git config --global user.email "balazs.sevecsek@gmail.com"
+git config --global user.name "Balazs Sevecsek"
 
 #package manager
 #install yay if it is not already installed
@@ -66,3 +72,4 @@ fi
 source ./keepassxc.sh
 sudo pacman -S --needed --noconfirm flatpak
 yay -Sy -needed --noconfirm brave-bin
+sudo pacman -S --needed --noconfirm wl-clipboard
