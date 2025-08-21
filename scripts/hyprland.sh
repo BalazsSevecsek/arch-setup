@@ -18,6 +18,7 @@ sudo pacman -S --needed --noconfirm hypridle
 sudo pacman -S --needed --noconfirm hyprsunset
 sudo pacman -S --needed --noconfirm hyprpolkitagent
 sudo pacman -S --needed --noconfirm playerctl
+sudo pacman -S --needed --noconfirm seahorse
 #notification manager
 sudo pacman -S --needed --noconfirm mako
 #screen sharing and audio
@@ -31,9 +32,7 @@ sudo pacman -S --needed --noconfirm htop
 cp -r config/hyprland/* ~/.config/hypr/
 
 #fonts
-# [ ! -d ~/nerd-fonts ]
-# git clone https://github.com/ryanoasis/nerd-fonts.git ~/nerd-fonts
-# source ~/nerd-fonts/install.sh
+yay -S --needed --noconfirm nerd-fonts
 
 sudo pacman -S --needed --noconfirm inter-font
 sudo pacman -S --needed --noconfirm nerd-fonts-noto-sans
@@ -83,4 +82,6 @@ systemctl --user enable --now hyprsunset.service
 systemctl --user enable --now waybar.service
 #Authentication agent for apps asking for password
 systemctl --user enable --now hyprpolkitagent.service
+systemctl --user enable gnome-keyring-daemon.service
+systemctl --user start gnome-keyring-daemon.service
 # systemctl --user enable --now xdg-desktop-portal-hyprland
