@@ -1,2 +1,4 @@
-yay -S --needed --noconfirm google-chrome 
+#!/bin/bash
+
+yay -S --needed --noconfirm google-chrome
 yay -S --needed --noconfirm brave-bin
