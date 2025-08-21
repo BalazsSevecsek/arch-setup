@@ -48,7 +48,7 @@
   },
 
   "clock": {
-    "timezone": "Asia/Kolkata",
+    "timezone": "Europe/Budapest",
     "tooltip": false,
     "format": "{:%H:%M  - %B %d (%A) }",
     "interval": 1
