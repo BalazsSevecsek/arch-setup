@@ -80,6 +80,7 @@ cp -r config/mako/* ~/.config/mako/
 #enable services 
 systemctl --user enable --now hypridle.service
 systemctl --user enable --now hyprsunset.service
+systemctl --user enable --now waybar.service
 #Authentication agent for apps asking for password
 systemctl --user enable --now hyprpolkitagent.service
 # systemctl --user enable --now xdg-desktop-portal-hyprland
