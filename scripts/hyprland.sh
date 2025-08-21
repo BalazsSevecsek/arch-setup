@@ -13,7 +13,10 @@ sudo pacman -S --needed --noconfirm xdg-desktop-portal-hyprland
 sudo pacman -S --needed --noconfirm waybar
 sudo pacman -S --needed --noconfirm hyprpaper
 sudo pacman -S --needed --noconfirm hyprlock
-sudo pacman -S --needed --noconfirm hypershot
+sudo pacman -S --needed --noconfirm brightnessctl
+sudo usermod -aG video $USER
+sudo pacman -S --needed --noconfirm jq grim slurp wl-clipboard libnotify
+yay -S --needed --noconfirm hyprshot
 sudo pacman -S --needed --noconfirm hypridle
 sudo pacman -S --needed --noconfirm hyprsunset
 sudo pacman -S --needed --noconfirm hyprpolkitagent
@@ -29,6 +32,10 @@ yay -S --needed --noconfirm elephant walker
 sudo pacman -S --needed --noconfirm htop
 #wifi control
 sudo pacman -S --needed --noconfirm networkmanager network-manager-apple
+
+
+[ ! -d ~/screenshots ] && mkdir -p ~/screenshots
+echo "Created screenshots folder"
 
 [ ! -d ~/.config/hypr ] && mkdir -p ~/.config/hypr
 cp -r config/hyprland/* ~/.config/hypr/
