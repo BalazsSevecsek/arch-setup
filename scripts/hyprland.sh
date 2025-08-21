@@ -27,6 +27,8 @@ sudo pacman -S --needed --noconfirm  gtk4 gtk4-layer-shell protobuf protobuf-c
 #app launcher
 yay -S --needed --noconfirm elephant walker
 sudo pacman -S --needed --noconfirm htop
+#wifi control
+sudo pacman -S --needed --noconfirm networkmanager network-manager-apple
 
 [ ! -d ~/.config/hypr ] && mkdir -p ~/.config/hypr
 cp -r config/hyprland/* ~/.config/hypr/
@@ -82,6 +84,7 @@ systemctl --user enable --now hyprsunset.service
 systemctl --user enable --now waybar.service
 #Authentication agent for apps asking for password
 systemctl --user enable --now hyprpolkitagent.service
-systemctl --user enable gnome-keyring-daemon.service
-systemctl --user start gnome-keyring-daemon.service
+systemctl --user enable --now gnome-keyring-daemon.service
+systemctl --user enable --now NetworkManager
+
 # systemctl --user enable --now xdg-desktop-portal-hyprland
