@@ -1,8 +1,10 @@
 #!/bin/bash
 
-ssh-keygen -t ed25519 -C "emailaddress" -N "" -f ~/.ssh/id_ed25519
-echo "Add this to github keys"
-cat ~/.ssh/id_ed25519.pub
+if [ ! -f ~/.ssh/id_ed25519 ]; then
+  ssh-keygen -t ed25519 -C "emailaddress" -N "" -f ~/.ssh/id_ed25519
+  echo "Add this to github keys"
+  cat ~/.ssh/id_ed25519.pub
+fi
 
 git config --global user.email "balazs.sevecsek@gmail.com"
 git config --global user.name "Balazs Sevecsek"

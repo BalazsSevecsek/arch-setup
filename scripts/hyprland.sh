@@ -27,9 +27,7 @@ sudo pacman -S --needed --noconfirm  gtk4 gtk4-layer-shell protobuf protobuf-c
 yay -S --needed --noconfirm elephant walker
 sudo pacman -S --needed --noconfirm htop
 
-[ ! -d ~/.config/hypr ] 
-mkdir -p ~/.config/hypr
-
+[ ! -d ~/.config/hypr ] && mkdir -p ~/.config/hypr
 cp -r config/hyprland/* ~/.config/hypr/
 
 #fonts
