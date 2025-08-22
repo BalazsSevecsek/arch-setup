@@ -1,0 +1,14 @@
+[Unit]
+Description=Google Drive OCamlFuse Mount
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/sevi/.opam/default/bin/google-drive-ocamlfuse -id <id> -secret <secret> %h/gdrive
+ExecStop=/usr/bin/fusermount -u %h/gdrive
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

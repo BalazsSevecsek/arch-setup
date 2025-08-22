@@ -57,10 +57,13 @@ for s in $runs_dir; do
     #     log "grep \"$grep\" filtered out $s"
     #     continue
     # fi
-
+    
     log "running script: $s"
-
+    
     if [[ $dry_run == "0" ]]; then
         $s
     fi
 done
+
+#needs user input, execute last
+source ./keepassxc.sh
