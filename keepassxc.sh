@@ -38,6 +38,8 @@ else
         sed -i "s/GOOGLE_CLIENT_ID/$client_id/g" ./config/systemd/google-drive-ocamlfuse.service
         sed -i "s/GOOGLE_CLIENT_SECRET/$client_secret/g" ./config/systemd/google-drive-ocamlfuse.service
         
+        ~/.opam/default/bin/google-drive-ocamlfuse -id GOOGLE_CLIENT_ID -secret GOOGLE_CLIENT_SECRET ~/gdrive
+        
         sudo cp ./config/systemd/google-drive-ocamlfuse.service ~/.config/systemd/user/
         echo "Service file copied to ~/.config/systemd/user/"
         sudo systemctl daemon-reload
