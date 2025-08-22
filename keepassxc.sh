@@ -32,6 +32,12 @@ else
     if [ -f /etc/systemd/system/google-drive-ocamlfuse.service ]; then
         echo "Service file already exists."
     else
+        #wait for input of client id and secret from the user then edit the systemd service file to include them
+        read -p "Enter your Google Client ID: " client_id
+        read -p "Enter your Google Client Secret: " client_secret
+        sed -i "s/GOOGLE_CLIENT_ID/$client_id/g" ./config/systemd/google-drive-ocamlfuse.service
+        sed -i "s/GOOGLE_CLIENT_SECRET/$client_secret/g" ./config/systemd/google-drive-ocamlfuse.service
+        
         sudo cp ./config/systemd/google-drive-ocamlfuse.service ~/.config/systemd/user/
         echo "Service file copied to ~/.config/systemd/user/"
         sudo systemctl daemon-reload
