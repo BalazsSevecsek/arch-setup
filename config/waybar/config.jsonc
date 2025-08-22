@@ -63,7 +63,7 @@
     "format-disconnected": "睊",
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
-    "on-click": "nm-applet --indicator &"
+    "on-click": "networkmanager_dmenu"
   },
   "cpu": {
     "format": " {usage}%",

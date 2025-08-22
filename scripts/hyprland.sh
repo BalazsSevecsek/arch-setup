@@ -32,7 +32,7 @@ yay -S --needed --noconfirm elephant walker
 sudo pacman -S --needed --noconfirm htop
 #wifi control
 sudo pacman -S --needed --noconfirm networkmanager network-manager-apple
-
+yay -S --needed --noconfirm networkmanager-dmenu-git
 
 [ ! -d ~/screenshots ] && mkdir -p ~/screenshots
 echo "Created screenshots folder"
@@ -59,6 +59,8 @@ sudo systemctl start bluetooth.service
 [ ! -d ~/.config/waybar/ ] && mkdir -p ~/.config/waybar/
 cp -r config/waybar/* ~/.config/waybar/
 
+[ ! -d ~/.config/networkmanager-dmenu/ ] && mkdir -p ~/.config/networkmanager-dmenu/
+cp -r config/networkmanager-dmenu/* ~/.config/networkmanager-dmenu/
 
 #pomodoro for waybar
 # git clone git@github.com:Andeskjerf/waybar-module-pomodoro.git
