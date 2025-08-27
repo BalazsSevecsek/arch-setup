@@ -29,21 +29,22 @@ else
     google-drive-ocamlfuse --version
     
     #Test if systemd service file exists, if not copy it
-    if [ -f /etc/systemd/system/google-drive-ocamlfuse.service ]; then
-        echo "Service file already exists."
+    if [ -f ~/.config/systemd/user/gdrive-ocamlfuse.service ]; then
+        echo "Gdrive ocamlfuse service file already exists."
     else
         #wait for input of client id and secret from the user then edit the systemd service file to include them
         read -p "Enter your Google Client ID: " client_id
         read -p "Enter your Google Client Secret: " client_secret
-        sed -i "s/GOOGLE_CLIENT_ID/$client_id/g" ./config/systemd/google-drive-ocamlfuse.service
-        sed -i "s/GOOGLE_CLIENT_SECRET/$client_secret/g" ./config/systemd/google-drive-ocamlfuse.service
+        sed -i "s/GOOGLE_CLIENT_ID/$client_id/g" ./config/systemd/gdrive-ocamlfuse.service
+        sed -i "s/GOOGLE_CLIENT_SECRET/$client_secret/g" ./config/systemd/gdrive-ocamlfuse.service
         
         ~/.opam/default/bin/google-drive-ocamlfuse -id GOOGLE_CLIENT_ID -secret GOOGLE_CLIENT_SECRET ~/gdrive
         
-        sudo cp ./config/systemd/google-drive-ocamlfuse.service ~/.config/systemd/user/
+        # sudo cp ./config/systemd/gdrive-ocamlfuse.service /etc/systemd/user/
+        sudo cp ./config/systemd/gdrive-ocamlfuse.service ~/.config/systemd/user/
         echo "Service file copied to ~/.config/systemd/user/"
         sudo systemctl daemon-reload
-        systemctl --user enable --now google-drive-ocamlfuse.service
+        systemctl --user enable --now gdrive-ocamlfuse.service
     fi
 fi
 

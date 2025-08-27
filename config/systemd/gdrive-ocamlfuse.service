@@ -1,0 +1,12 @@
+[Unit]
+Description=FUSE filesystem over Google Drive
+After=network.target
+
+[Service]
+ExecStart=%h/.opam/default/bin/google-drive-ocamlfuse %h/gdrive
+ExecStop=fusermount -u %h/gdrive
+Restart=always
+Type=forking
+
+[Install]
+WantedBy=default.target
