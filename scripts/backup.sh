@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo pacman -S --needed --noconfirm xorg-xhost
 sudo pacman -S --needed --noconfirm timeshift grub-btrfs
 yay -S --needed --noconfirm timeshift-autosnap
 
