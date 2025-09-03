@@ -58,9 +58,11 @@
   },
 
   "network": {
-    "format-wifi": "",
-    "format-ethernet": "",
-    "format-disconnected": "睊",
+    "format-wifi": "󰖩",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󱚼",
+    "format-linked": "󰖂",
+    "format-disabled": "󱚿",
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
     "on-click": "networkmanager_dmenu"

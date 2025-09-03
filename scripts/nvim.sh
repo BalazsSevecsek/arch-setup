@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-sudo pacman -S --needed --noconfirm vim nvim
+sudo pacman -S --needed --noconfirm vim nvim lazygit
 
 #backup existing nvim config if any
 
