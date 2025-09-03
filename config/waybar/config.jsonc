@@ -8,14 +8,12 @@
   "modules-right": [
     "cpu",
     "memory",
-    "battery",
     "backlight",
-    "sway/language",
+    "battery",
+    "hyprland/language",
     "bluetooth",
     "network",
-    "pulseaudio",
-    "backlight",
-    "battery"
+    "pulseaudio"
   ],
 
   "hyprland/workspaces": {
@@ -101,9 +99,10 @@
     "orientation": "horizontal",
     "device": "intel_backlight"
   },
-  "sway/language": {
-    "format": " {short} {variant}",
-    "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+  "hyprland/language": {
+    "format": " {} ",
+    "format-en": "US",
+    "format-hu": "HU"
   },
   "battery": {
     "interval": 2,
