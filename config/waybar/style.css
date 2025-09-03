@@ -84,19 +84,19 @@
 
 /* --- Center Module (Individual, Fully Rounded Block - With Simple Hover) --- */
 #clock {
-  background-color: #1a1b26;
+  /* background-color: #1a1b26; */
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
-  border-radius: 6px; /* This module is always rounded */
-  box-shadow: 0 1px 3px rgba(153, 209, 219, 0.2);
+  /* border-radius: 6px; This module is always rounded */
+  /* box-shadow: 0 1px 3px rgba(153, 209, 219, 0.2); */
   min-width: 0;
   border: none;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  /* transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; */
 }
 
 /* Simple Hover effect for clock module - BRIGHTER COLOR */
 #clock:hover {
-  background-color: rgba(153, 209, 219, 0.1); /* Brighter highlight */
+  /* background-color: rgba(153, 209, 219, 0.1); //Brighter highlight */
 }
 
 #custom-pomodoro {
@@ -256,7 +256,7 @@ tooltip {
   box-shadow: none;
 }
 #backlight trough {
-  min-height: 10px;
+  min-height: 0px;
   min-width: 80px;
   border-radius: 5px;
   background-color: black;
