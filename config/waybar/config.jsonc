@@ -17,10 +17,19 @@
   ],
 
   "hyprland/workspaces": {
-    "format": "{name}: {icon}",
+    "format": "{icon} {name}: {windows} ",
+    "all-outputs": true,
     "format-icons": {
       "active": "", // Nerd Font filled circle
-      "default": "" // Nerd Font hollow circle
+      "default": "" // Nerd Font hollow circle
+    },
+    "format-window-separator": "",
+    "workspace-taskbar": {
+      "enable": true,
+      // "format": " {windows}",
+      "update-active-window": true,
+      "icon-size": 18,
+      "on-click-window": "${SCRIPTS}/focus-window.sh {address} {button}"
     }
   },
 
