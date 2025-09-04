@@ -3,9 +3,10 @@ Description=FUSE filesystem over Google Drive
 After=network.target
 
 [Service]
-ExecStart=%h/.opam/default/bin/google-drive-ocamlfuse %h/gdrive
+ExecStart=google-drive-ocamlfuse %h/gdrive
 ExecStop=fusermount -u %h/gdrive
 Restart=always
+RestartSec=30
 Type=forking
 
 [Install]

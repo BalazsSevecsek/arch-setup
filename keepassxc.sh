@@ -3,7 +3,15 @@ sudo pacman -S --noconfirm --needed keepassxc
 if [ -d ~/gdrive ]; then
     echo "Directory ~/gdrive already exists."
 else
-    mkdir ~/gdrive
+    mkdir -p ~/gdrive
+    chmod 700 ~/gdrive
+fi
+
+if [ -f /usr/local/bin/google-drive-ocamlfuse ]; then
+    echo "google-drive-ocamlfuse already exists in /usr/local/bin."
+else
+    echo "Creating symlink for google-drive-ocamlfuse in /usr/local/bin."
+    sudo ln -s ~/.opam/default/bin/google-drive-ocamlfuse /usr/local/bin/google-drive-ocamlfuse
 fi
 
 if [-d ~/google-drive-ocamlfuse ]; then
