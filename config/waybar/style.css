@@ -79,9 +79,9 @@
 
 #workspaces button:hover,
 #workspaces button:focus {
-  /* background: rgb(41, 42, 53);
-  color: #c6d0f5; */
-  background-color: #1a1b26;
+  background: rgb(41, 42, 51);
+  color: #c6d0f5;
+  /* background-color: #1a1b26; */
   outline: none;
   border: none;
   box-shadow: none;
