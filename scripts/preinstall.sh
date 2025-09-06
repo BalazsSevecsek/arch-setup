@@ -82,3 +82,7 @@ sudo pacman -S --needed --noconfirm linux-firmware
 sudo cp ./config/hyprland/iwlwifi/iwlwifi.conf /etc/modprobe.d/iwlwifi.conf
 sudo modprobe -r iwlmvm iwlwifi
 sudo modprobe iwlwifi
+
+
+#for finding the fasterst mirrors
+sudo pacman-mirrors --fasttrack
