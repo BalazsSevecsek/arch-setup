@@ -74,7 +74,6 @@ fi
 source ./keepassxc.sh
 sudo pacman -S --needed --noconfirm flatpak
 yay -Sy -needed --noconfirm brave-bin
-sudo pacman -S --needed --noconfirm wl-clipboard
 
 #for wifi
 sudo pacman -S --needed --noconfirm linux-firmware

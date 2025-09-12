@@ -15,7 +15,7 @@ sudo pacman -S --needed --noconfirm hyprpaper
 sudo pacman -S --needed --noconfirm hyprlock
 sudo pacman -S --needed --noconfirm brightnessctl
 sudo usermod -aG video $USER
-sudo pacman -S --needed --noconfirm jq grim slurp wl-clipboard libnotify
+sudo pacman -S --needed --noconfirm jq grim slurp wl-clipboard libnotify cliphist
 yay -S --needed --noconfirm hyprshot
 sudo pacman -S --needed --noconfirm hypridle
 sudo pacman -S --needed --noconfirm hyprsunset
