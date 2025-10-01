@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo pacman -S --noconfirm --needed keepassxc
 
 if [ -d ~/gdrive ]; then

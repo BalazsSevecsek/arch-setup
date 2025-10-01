@@ -71,6 +71,16 @@ if [ "$SHELL" != "/bin/zsh" ]; then
 fi
 
 
+#add plugins to .zshrc if not already present
+if [ -f ~/.zshrc ] && grep -q "plugins=(" ~/.zshrc; then
+    echo "Adding plugins to .zshrc..."
+    sed -i 's/plugins=(.*)/plugins=(git fzf zsh-autosuggestions zsh-syntax-highlighting zsh-completions nvm golang rust node pip kubectl)/' ~/.zshrc
+else
+    echo "Adding plugins to .zshrc..."
+    echo "plugins=(git fzf zsh-autosuggestions zsh-syntax-highlighting zsh-completions nvm golang rust node pip kubectl)" >> ~/.zshrc
+fi
+
+
 source ./keepassxc.sh
 sudo pacman -S --needed --noconfirm flatpak
 yay -Sy -needed --noconfirm brave-bin
