@@ -71,6 +71,42 @@ if [ "$SHELL" != "/bin/zsh" ]; then
 fi
 
 
+
+#install zsh-autosuggestions if not already installed
+if [ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
+    echo "zsh-autosuggestions is already installed."
+else
+    echo "Installing zsh-autosuggestions..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+
+#if zsh-syntax-highlighting is not already installed
+if pacman -Q zsh-syntax-highlighting &>/dev/null; then
+    echo "zsh-syntax-highlighting is already installed."
+else
+    echo "Installing zsh-syntax-highlighting..."
+    sudo pacman -S --noconfirm zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting    fi
+fi
+
+
+#install zsh-completions if not already installed
+if [ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions ]; then
+    echo "zsh-completions is already installed."
+else
+    echo "Installing zsh-completions..."
+    sudo pacman -S --noconfirm 	zsh-completions
+    git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+fi
+
+#install fzf if not already installed
+if [ ! -d ~/.fzf ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+else
+    echo "fzf is already installed."
+fi
+
 #add plugins to .zshrc if not already present
 if [ -f ~/.zshrc ] && grep -q "plugins=(" ~/.zshrc; then
     echo "Adding plugins to .zshrc..."
