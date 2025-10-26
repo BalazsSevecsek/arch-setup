@@ -81,12 +81,12 @@ else
 fi
 
 #if zsh-syntax-highlighting is not already installed
-if pacman -Q zsh-syntax-highlighting &>/dev/null; then
+if sudo pacman -Q zsh-syntax-highlighting &>/dev/null; then
     echo "zsh-syntax-highlighting is already installed."
 else
     echo "Installing zsh-syntax-highlighting..."
     sudo pacman -S --noconfirm zsh-syntax-highlighting
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting    fi
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 
 fi
 
 

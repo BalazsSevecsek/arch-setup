@@ -1,6 +1,7 @@
 #!/bin/bash
 
-
+sudo pacman -S --needed --noconfirm sddm #welcome screen
+sudo systemctl enable sddm
 sudo pacman -S --needed --noconfirm dolphin
 sudo pacman -S --needed --noconfirm ghostty
 sudo pacman -S --needed --noconfirm foot
@@ -31,7 +32,8 @@ sudo pacman -S --needed --noconfirm  gtk4 gtk4-layer-shell protobuf protobuf-c
 yay -S --needed --noconfirm elephant walker
 sudo pacman -S --needed --noconfirm htop
 #wifi control
-sudo pacman -S --needed --noconfirm networkmanager network-manager-apple
+sudo pacman -S --needed --noconfirm networkmanager
+sudo pacman -S --needed --noconfirm network-manager-apple
 yay -S --needed --noconfirm networkmanager-dmenu-git
 
 [ ! -d ~/screenshots ] && mkdir -p ~/screenshots
@@ -83,6 +85,7 @@ else
 fi
 
 
+#notifications
 [ ! -d ~/.config/mako/ ] && mkdir -p ~/.config/mako/
 cp -r config/mako/* ~/.config/mako/
 
@@ -94,4 +97,5 @@ systemctl --user enable --now waybar.service
 #Authentication agent for apps asking for password
 systemctl --user enable --now hyprpolkitagent.service
 systemctl --user enable --now gnome-keyring-daemon.service
-systemctl --user enable --now NetworkManager
+sudo systemctl enable NetworkManager
+sudo systemctl start NetworkManager
