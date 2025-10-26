@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S --noconfirm --needed  base-devel bzip2 openssl libffi tk
+sudo pacman -S --noconfirm --needed  base-devel bzip2 openssl libffi tk curl
 
 curl -fsSL https://pyenv.run | bash
 
