@@ -9,14 +9,7 @@ else
     chmod 700 ~/gdrive
 fi
 
-if [ -f /usr/local/bin/google-drive-ocamlfuse ]; then
-    echo "google-drive-ocamlfuse already exists in /usr/local/bin."
-else
-    echo "Creating symlink for google-drive-ocamlfuse in /usr/local/bin."
-    sudo ln -s ~/.opam/default/bin/google-drive-ocamlfuse /usr/local/bin/google-drive-ocamlfuse
-fi
-
-if [-d ~/google-drive-ocamlfuse ]; then
+if [ -d ~/google-drive-ocamlfuse ]; then
     echo "Directory ~/google-drive-ocamlfuse already exists."
 else
     git clone https://github.com/astrada/google-drive-ocamlfuse.git ~/google-drive-ocamlfuse
@@ -35,6 +28,7 @@ else
     opam install -y tiny_httpd
     opam install -y extlib
     dune build @install
+    dune install
     
     google-drive-ocamlfuse --version
     
@@ -45,17 +39,26 @@ else
         #wait for input of client id and secret from the user then edit the systemd service file to include them
         read -p "Enter your Google Client ID: " client_id
         read -p "Enter your Google Client Secret: " client_secret
-        sed -i "s/GOOGLE_CLIENT_ID/$client_id/g" ./config/systemd/gdrive-ocamlfuse.service
-        sed -i "s/GOOGLE_CLIENT_SECRET/$client_secret/g" ./config/systemd/gdrive-ocamlfuse.service
+        # sed -i "s/GOOGLE_CLIENT_ID/$client_id/g" ./config/systemd/gdrive-ocamlfuse.service
+        # sed -i "s/GOOGLE_CLIENT_SECRET/$client_secret/g" ./config/systemd/gdrive-ocamlfuse.service
         
-        ~/.opam/default/bin/google-drive-ocamlfuse -id GOOGLE_CLIENT_ID -secret GOOGLE_CLIENT_SECRET ~/gdrive
-        
-        # sudo cp ./config/systemd/gdrive-ocamlfuse.service /etc/systemd/user/
         sudo cp ./config/systemd/gdrive-ocamlfuse.service ~/.config/systemd/user/
         echo "Service file copied to ~/.config/systemd/user/"
         sudo systemctl daemon-reload
         systemctl --user enable --now gdrive-ocamlfuse.service
+        
+        ~/.opam/default/bin/google-drive-ocamlfuse -id $client_id -secret $client_secret ~/gdrive
+        
+        # sudo cp ./config/systemd/gdrive-ocamlfuse.service /etc/systemd/user/
     fi
+fi
+
+
+if [ -f /usr/local/bin/google-drive-ocamlfuse ]; then
+    echo "google-drive-ocamlfuse already exists in /usr/local/bin."
+else
+    echo "Creating symlink for google-drive-ocamlfuse in /usr/local/bin."
+    sudo ln -s ~/.opam/default/bin/google-drive-ocamlfuse /usr/local/bin/google-drive-ocamlfuse
 fi
 
 
