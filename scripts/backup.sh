@@ -1,5 +1,7 @@
 #!/bin/bash
 sudo pacman -S --needed --noconfirm xorg-xhost
+sudo pacman -S --needed --noconfirm inotify-tools
+
 sudo pacman -S --needed --noconfirm timeshift grub-btrfs
 yay -S --needed --noconfirm timeshift-autosnap
 
@@ -11,9 +13,9 @@ sudo cp ./config/timeshift-autosnap/timeshift-autosnap.conf /etc/timeshift-autos
 
 
 # Check if ExecStart line already contains the desired configuration
-if ! grep -q "ExecStart=/usr/bin/grub-btrfsd --syslog --timeshift-auto" /etc/systemd/system/grub-btrfsd.service; then
+if ! grep -q "ExecStart=/usr/bin/grub-btrfsd --syslog --timeshift-auto" /usr/lib/systemd/system/grub-btrfsd.service; then
     # Use sed to replace ExecStart line in the service file
-    sudo sed -i '/ExecStart=/c\ExecStart=/usr/bin/grub-btrfsd --syslog --timeshift-auto' /etc/systemd/system/grub-btrfsd.service
+    sudo sed -i '/ExecStart=/c\ExecStart=/usr/bin/grub-btrfsd --syslog --timeshift-auto' /usr/lib/systemd/system/grub-btrfsd.service
     # Reload systemd to apply changes
     sudo systemctl daemon-reload
     # Restart the service to use new configuration

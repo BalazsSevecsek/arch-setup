@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo pacman -S gnome-keyring
 sudo pacman -S --needed --noconfirm sddm #welcome screen
 sudo systemctl enable sddm
 sudo pacman -S --needed --noconfirm dolphin
